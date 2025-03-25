@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Ingrese la cantidad de alumnos</p>
+    <input id="Alumnos" type="text" name="" />
+    <button onclick="registrar()">registrar</button>
+  </body>
+  <script>
+    let listaAlumnos = [];
+    function registrar() {
+      const numAlumnos = parseInt(document.getElementById("Alumnos").value);
+
+      for (let index = 0; index < numAlumnos; index++) {
+        let nombre = prompt("Ingrese el nombre del alumno");
+        let edad = parseInt(prompt("Ingrese la edad del alumno"));
+        let nota = parseInt(prompt("Ingrese la nota del alumno"));
+
+        const alumnos = {
+          Nombre: nombre,
+          Edad: edad,
+          Notas: nota,
+        };
+        listaAlumnos.push(alumnos);
+      }
+      console.table(listaAlumnos);
+      console.table(listaAlumnos.sort((a, b) => b.Notas - a.Notas));
+    }
+  </script>
+</html>

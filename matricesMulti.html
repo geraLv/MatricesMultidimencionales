@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numUsuarios = prompt("ingrese la cantidad de usuarios");
+      function registrar() {
+        for (let i = 0; i < numUsuarios; i++) {
+          let nombre = prompt("ingrese el nombre del usuario");
+          let apellido = prompt("ingrese el apellido del usuario");
+          let dni = prompt("ingrese el DNI del usuario");
+          let cNumeros = prompt(
+            "ingrese la cantidad de numeros de telefono asociados que tiene el usuario"
+          );
+          let numsAsociados = [];
+          for (let i = 0; i < cNumeros; i++) {
+            let telefono = prompt(
+              "ingrese el/los numeros de telefono(uno a la vez)"
+            );
+            numsAsociados.push(telefono);
+          }
+          console.log(nombre, ",", apellido, ",", dni, ",", numsAsociados);
+        }
+      }
+      registrar(numUsuarios);
+    </script>
+  </body>
+</html>
